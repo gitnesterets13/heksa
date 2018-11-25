@@ -1,0 +1,878 @@
+body {
+    font-family: 'ClearSans', sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    background-color: #efefe2;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+	max-width: 1580px;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 1365px) {
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.Screen {
+	height: 100vh;
+}
+
+@media (max-width: 1365px) {
+	.Screen {
+		height: auto;
+	}
+}
+
+@media (max-width: 1365px) {
+	.Screen:before {
+		content: "";
+	    position: absolute;
+	    width: 1px;
+	    height: 700px;
+	    background-color: rgba(255, 255, 255, 0.34);
+	    top: 0;
+	    left: 50%;
+	    z-index: 1;
+	    margin-left: 92px;
+	}
+}
+
+@media (max-width: 767px) {
+	.Screen:before {
+		display: none;
+	}
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 17px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-left: 39px;
+}
+
+@media (max-width: 1365px) {
+	.Header {
+		padding-left: 30px;
+	    padding-right: 26px;
+	    justify-content: flex-start;
+	}
+}
+
+@media (max-width: 767px) {
+	.Header {
+		padding-top: 13px;
+	    padding-left: 25px;
+	    padding-right: 15px;
+	}
+}
+
+.HeaderMenu {
+    display: inline-block;
+    list-style: none;
+    padding: 0 7px 0 0;
+    margin: 0;
+    text-align: left;
+}
+
+
+@media (max-width: 1365px) {
+	.HeaderMenu {
+	    position: absolute;
+	    background-color: #d0ca9e;
+	    right: 0;
+	    top: 0;
+	    width: 0;
+	    transform: translateX(100%);
+	    transition: all .45s;
+	    padding-top: 60px;
+	    padding-right: 0;
+	    z-index: 10;
+	    overflow-x: auto;
+	}
+}
+
+@media (max-width: 767px) {
+	.HeaderMenu {
+		display: block;
+	    position: relative;
+	    background-color: transparent;
+	    padding-top: 45px;
+	    padding-right: 0;
+	    z-index: 10;
+	    overflow-x: visible;
+	    transform: translateX(0);
+	    text-align: left;
+	}
+}
+
+
+
+
+
+.HeaderMenu.active {
+	width: auto;
+	transform: translateX(0);
+}
+
+.BtnLogin {
+	display: inline-block;
+    border: 1px solid #707070;
+    background-color: transparent;
+    font-family: 'ClearSans', sans-serif;
+    font-weight: 700;
+    padding: 5px 21px 5px 19px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 1365px) {
+	.BtnLogin {
+		padding: 5px 22px 5px 16px;
+	}
+}
+
+.BtnLogin:hover .fa-lock{
+    color: #ffffff;
+}
+
+.BtnLogin:hover {
+    color: #ffffff;
+    background-color: #707070;
+}
+
+
+.BtnLogin:focus {
+	outline: none !important;
+}
+
+.HeaderLogo-img {
+	display: inline-block;
+    background-color: #292929;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.HeaderLogo {
+	color: #292929;
+}
+
+.HeaderLogo-text {
+	display: inline-block;
+    vertical-align: middle;
+    font-family: 'ClearSans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.6px;
+}
+
+.BtnOrder {
+	display: inline-block;
+    border: 1px solid #2f3a3d;
+    background-color: #2f3a3d;
+    font-family: 'ClearSans', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 4px 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+	.BtnOrder {
+		margin-left: 40px;
+	}
+}
+
+.BtnOrder:hover {
+    background-color: transparent;
+    color: #2f3a3d;
+}
+
+.BtnOrder:focus {
+	outline: none !important;
+}
+
+.HeaderMenu li {
+    display: inline-block;
+    position: relative;
+	font-family: 'ClearSans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-size: 0;
+    padding: 0 7.5px;
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu li {
+		display: block;
+		padding: 0;
+	}
+}
+
+@media (min-width: 1366px) {
+	.HeaderMenu li:hover ul {
+	    opacity: 1;
+	    transform: scaleY(1);
+	}
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu li.active ul {
+	    opacity: 1;
+	    transform: scaleY(1);
+		height: auto;
+	}
+}
+
+.HeaderMenu li a {
+	display: block;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 0 26px;
+    line-height: 22px;
+    font-size: 15px;
+    border-bottom: 4px solid transparent;
+    transition: 0.3s;
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu li a {
+    	padding: 10px 40px;		
+	}
+}
+
+
+@media (max-width: 767px) {
+	.HeaderMenu li a {
+    	padding: 10px 60px 10px 40px;		
+	}
+}
+
+@media (min-width: 1366px) {
+	.HeaderMenu li:hover > a {
+		color: #ee5575;
+	    border-bottom: 4px solid rgba(238, 85, 117, 0.37);	
+	}
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu li.active > a {
+		color: #ee5575;
+	    border-bottom: 4px solid rgba(238, 85, 117, 0.37);	
+	}
+}
+
+.fa-angle-down {
+	transition: 0.3s;
+}
+
+.HeaderMenu li:hover > a .fa-angle-down {
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);	
+}
+
+.ContentText-title {
+	font-family: 'Roboto', sans-serif;
+    color: #d0ca9e;
+    font-size: 64px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+@media (max-width: 1365px) {
+	.ContentText-title {
+	    font-size: 52px;
+	    letter-spacing: 0.2px;
+	    margin-left: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.ContentText-title {
+		font-size: 32px;
+	    margin-left: 20px;
+	    letter-spacing: 0.5px;
+	}
+}
+
+.TextBlock {
+    display: flex;
+    max-width: 908px;
+}
+
+@media (max-width: 1365px) {
+	.TextBlock {
+	    max-width: 100%;
+	    justify-content: space-between;
+    	padding-left: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.TextBlock {
+	    display: block;
+	    padding-left: 0;
+	}
+}
+
+.TextBlock-item {
+	width: 33.3333333%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #262423;
+    padding-left: 8px;
+    padding-top: 11px;
+    line-height: 21px;
+    padding-right: 83px;
+}
+
+@media (max-width: 1676px) {
+	.TextBlock-item:first-child {
+	    padding-left: 8px;
+	}
+	.TextBlock-item {
+		padding-left: 12px;
+	}
+}
+
+@media (max-width: 1365px) {
+	.TextBlock-item:first-child {
+	    padding-left: 0;
+	}
+	.TextBlock-item {
+    	width: 30%;
+		padding-top: 16px;
+		padding-left: 0;
+		padding-right: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	.TextBlock-item {
+		position: relative;
+	    width: 100%;
+	    padding-top: 14px;
+	    padding-bottom: 37px;
+	}
+}
+
+@media (max-width: 767px) {
+	.TextBlock-item p {
+    	margin-left: 21px;
+    	padding-right: 25px;
+	}
+}
+
+.TextBlock-title {
+	font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #262423;
+    margin: 10px 0 22px;
+    max-width: 162px;
+    line-height: 30px;
+}
+
+@media (max-width: 767px) {
+	.TextBlock-title {
+		margin-left: 23px;
+	}
+}
+
+.Content {
+    display: flex;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 1365px) {
+	.Content {
+		display: block;
+	}
+}
+
+.HeaderLogin {
+	padding-top: 7px;
+}
+
+@media (max-width: 1365px) {
+	.HeaderLogin {
+		width: calc(35% - 40px);
+	}
+}
+
+@media (max-width: 767px) {
+	.HeaderLogin {
+		width: calc(100% - 40px);
+	}
+}
+
+.fa-lock {
+    margin-right: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+@media (max-width: 1365px) {
+	.fa-lock {
+	    font-size: 15px;
+	}
+}
+
+.HeaderCenter {
+	width: 54%;
+}
+
+@media (max-width: 1365px) {
+	.HeaderCenter {
+		width: 40%;
+	    text-align: right;
+	    padding-right: 20px;
+	    padding-top: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.HeaderCenter {
+		width: auto;
+	    position: absolute;
+	    background-color: #d0ca9e;
+	    right: 0;
+	    top: 0;
+	    width: 0;
+	    transform: translateX(100%);
+	    transition: all .45s;
+	    padding-top: 0;
+	    padding-right: 0;
+	    z-index: 10;
+	    overflow-x: auto;
+	    text-align: left;
+	    padding-bottom: 30px;
+	}
+}
+
+
+@media (max-width: 767px) {
+	.HeaderCenter.active {
+		width: auto;
+	    transform: translateX(0);
+	    transition: all .45s;
+	}
+}
+
+
+
+
+.fa-angle-down {
+    margin-left: 3px;
+    font-size: 15px;
+}
+
+.HeaderLogo {
+    padding-top: 3px;
+}
+
+@media (max-width: 1365px) {
+	.HeaderLogo {
+		width: 25%;
+	}
+}
+
+@media (max-width: 767px) {
+	.HeaderLogo {
+		width: 100%;
+		padding-bottom: 17px;
+	}
+}
+
+.ContentImg {
+    width: 33%;
+    padding-top: 20px;
+}
+
+@media (max-width: 1676px) {
+	.ContentImg {
+	    width: 32.5%;
+	}
+}
+
+@media (max-width: 1365px) {
+	.ContentImg {
+	    width: 100%;
+	    padding-top: 35px;
+	    padding-right: 55px;
+	    text-align: center;
+	    padding-left: 20px;
+	}
+}
+
+@media (max-width: 767px) {
+	.ContentImg {
+		padding-left: 5px;
+	    padding-right: 15px;
+	    padding-top: 22px;
+	}
+}
+
+.ContentImg img {
+    max-width: 403px;
+}
+
+@media (max-width: 1676px) {
+	.ContentImg img {
+	    margin-left: -26px;
+	}
+}
+
+@media (max-width: 1365px) {
+	.ContentImg img {
+	    margin-left: 0;
+	    max-width: 374px;			
+	}
+}
+
+@media (max-width: 767px) {
+	.ContentImg img {
+    	max-width: 284px;			
+	}
+}
+
+.ContentText {
+    width: 67%;
+}
+
+
+@media (max-width:  1676px) {
+	.ContentText {
+	    width: 67.5%;
+	}
+}
+
+@media (max-width: 1365px) {
+	.ContentText {
+		position: relative;
+	    width: 100%;
+	    padding-left: 0;
+	    padding-top: 2px;
+	}
+}
+
+@media (max-width: 767px) {
+	.ContentText {
+		padding-top: 21px;
+	}
+}
+
+.ScreenContent {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;	
+}
+
+.Line {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    margin-top: -117px;
+}
+
+.LineLine {
+    display: block;
+	width: 100%;
+    height: 1px;
+    background-color: #cbcbc3;
+    margin-bottom: 28px;
+    animation: splash 1s normal forwards ease-in-out;
+}
+
+.LineLine:nth-child(1) {
+    animation: splash 1s normal forwards ease-in-out;
+}
+
+.LineLine:nth-child(2) {
+    animation: splash 1.6s normal forwards ease-in-out;
+}
+
+.LineLine:nth-child(3) {
+    animation: splash 2.2s normal forwards ease-in-out;
+}
+
+.LineLine:nth-child(4) {
+    animation: splash 2.8s normal forwards ease-in-out;
+}
+
+@keyframes splash {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+    	opacity: 1;
+        width: 100%;
+    }
+}
+
+.Burger {
+	display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 8px 8px;
+    margin-top: 7px;
+}
+
+@media (max-width: 1365px) {
+	.Burger {
+		display: block;
+	}
+}
+
+@media (max-width: 767px) {
+	.Burger {
+	    padding: 8px 9px;
+	    margin-top: 5px;
+	}
+}
+
+.Burger span {
+	width: 100%;
+    height: 4px;
+    margin-bottom: 4px;
+    background: #2f3a3d;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.Burger.active {
+	z-index: 12;
+}
+
+@media (max-width: 767px) {
+	.Burger.active {
+		top: -60px;
+	}
+}
+
+.Burger.active .BurgerFirst {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.Burger.active .BurgerMiddle {
+	opacity: 0;
+}
+
+.Burger.active .BurgerThird {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: -9px;
+}
+
+
+.Overlay {
+        transition: 0.3s;
+        opacity: 0;
+}
+.Overlay.active {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+    opacity: 1;
+}
+
+.LineTablet {
+	display: none;
+	top: 109px;
+    transform: translateY(0);
+    margin-top: 0;
+    left: 0;
+}
+
+
+
+@media (max-width: 1365px) {
+	.LineTablet {
+		display: block;
+	}
+}
+
+@media (max-width: 767px) {
+	.LineTablet {
+		display: none;
+	}
+}
+
+@media (max-width: 1365px) {
+	.LineDesctop {
+		display: none;
+	}
+}
+
+.LineMobile {
+	display: none;
+    top: 23px;
+    transform: translateY(0);
+    left: 0;
+    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+	.LineMobile {
+		display: block;
+	}
+}
+
+.HeaderMenu ul {
+	background: #d0ca9e;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 10;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: .5s ease-in-out;
+    padding: 10px 20px 20px;
+    min-width: 149px;
+    margin-top: -10px;
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu ul {
+		position: relative;
+	    top: 0;
+	    left: 0;
+	    margin-top: 0;
+	    height: 0;	
+	    padding: 0 0 30px 0;	
+	}
+}
+
+.HeaderMenu ul:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: -19px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #d0ca9e;
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu ul:before {
+	    display: none;
+	}
+}	
+
+.HeaderMenu li > ul li a {
+    padding: 10px 0 15px;
+}
+
+@media (max-width: 1365px) {
+	.HeaderMenu li > ul li a {
+	    padding: 10px 40px;
+	}
+}
+
+@font-face {
+	font-family: 'ClearSans';
+	src: url('../font/ClearSans-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'ClearSans';
+	src: url('../font/ClearSans-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'ClearSans';
+	src: url('../font/ClearSans-Medium.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'ClearSans';
+	src: url('../font/ClearSans-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Light.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Medium.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Black.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../font/Roboto-Bold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: 700;
+}
